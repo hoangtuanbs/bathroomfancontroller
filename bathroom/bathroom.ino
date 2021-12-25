@@ -4,6 +4,7 @@
 #include <Adafruit_SSD1306.h>
 #include <ArduinoJson.h>
 #include <splash.h>
+#include "debug.h"
 #include "eeprom.h"
 #include "device.h"
 #include "webserver.h"
@@ -17,22 +18,6 @@
 #include <TaskScheduler.h>
 #include <DHT_U.h>
 #include <DHT.h>
-
-#define _DEBUG_
-//#define _TEST_
-
-#ifdef _DEBUG_
-#define _PP(a) Serial.print(a);
-#define _PL(a) Serial.println(a);
-#define _PM(a)              \
-    Serial.print(millis()); \
-    Serial.print(": ");     \
-    Serial.println(a);
-#else
-#define _PP(a)
-#define _PL(a)
-#define _PM(a)
-#endif
 
 #if defined(ARDUINO_ARCH_ESP32)
 #define LED_BUILTIN 23 // esp32 dev2 kit does not have LED
@@ -182,7 +167,6 @@ void handlePostRom()
         }
     }
 }
-
 
 void setup()
 {

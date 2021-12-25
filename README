@@ -1,0 +1,6 @@
+A simple Exhaust Fan controller, designed to pump out humid air.
+
+Fan settings are configurable with Web Portal:
+- Max and Min Humidity
+- Temperature when Fan should operate
+- Periodically run to exchange air
